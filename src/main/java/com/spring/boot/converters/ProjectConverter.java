@@ -16,7 +16,10 @@ public class ProjectConverter {
 		if (projectDto != null) {
 			project.setId(projectDto.getId());
 			project.setName(projectDto.getName());
-			project.setAbbreviation(projectDto.getAbbreviation());
+			project.setStatus(projectDto.getStatus());
+			project.setType(projectDto.getType());
+			project.setStartDate(projectDto.getStartDate());
+			project.setEndDate(projectDto.getEndDate());
 			return project;
 		}
 		return null;
@@ -31,7 +34,11 @@ public class ProjectConverter {
 				ProjectDto projectDto = new ProjectDto();
 				projectDto.setId(project.getId());
 				projectDto.setName(project.getName());
-				projectDto.setAbbreviation(project.getAbbreviation());
+				projectDto.setStatus(project.getStatus());
+				projectDto.setType(project.getType());
+				projectDto.setStartDate(project.getStartDate());
+				projectDto.setEndDate(project.getEndDate());
+				
 
 				listProjectDto.add(projectDto);
 			}
