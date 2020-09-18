@@ -41,8 +41,7 @@ public class ProjectController {
 	
 	@GetMapping(value = "/project/{id}")
 	public ResponseEntity<Object>findProjectById(@PathVariable Long id){
-		projectService.getProjectFromId(id);
-		return  new ResponseEntity<Object>(ProjectConverter.projectToProjectDto(projectService.getAll()), HttpStatus.OK);
+		return  new ResponseEntity<Object>(projectService.getProjectFromId(id), HttpStatus.OK);
 	}
 	
 	@PutMapping(value = "/project")
