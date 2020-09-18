@@ -8,12 +8,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Project {
+public class Module {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String name;
-	private String abbreviation;
+	private long projectId;
 
 	public Long getId() {
 		return id;
@@ -31,12 +31,13 @@ public class Project {
 		this.name = name;
 	}
 
-	public String getAbbreviation() {
-		return abbreviation;
+	public long getProjectId() {
+		return projectId;
 	}
 
-	public void setAbbreviation(String abbreviation) {
-		this.abbreviation = abbreviation;
+	public void setProjectId(long projectId) {
+		this.projectId = projectId;
 	}
+
 
 }
