@@ -11,41 +11,40 @@ import com.spring.boot.entities.Project;
 @Service
 public class ProjectConverter {
 	// projectDto to Project Entity Converter
-	public static Project projectDtoToProject(ProjectDto projectDto) {
-		Project project = new Project();
-		if (projectDto != null) {
-			project.setId(projectDto.getId());
-			project.setName(projectDto.getName());
-			project.setStatus(projectDto.getStatus());
-			project.setType(projectDto.getType());
-			project.setStartDate(projectDto.getStartDate());
-			project.setEndDate(projectDto.getEndDate());
-			return project;
-		}
-		return null;
-	}
-
-	// Project to ProjectDto list converter
-
-	public static List<ProjectDto> projectToProjectDto(List<Project> projectList) {
-		List<ProjectDto> listProjectDto = new ArrayList<>();
-		if (projectList != null) {
-			for (Project project : projectList) {
-				ProjectDto projectDto = new ProjectDto();
-				projectDto.setId(project.getId());
-				projectDto.setName(project.getName());
-				projectDto.setStatus(project.getStatus());
-				projectDto.setType(project.getType());
-				projectDto.setStartDate(project.getStartDate());
-				projectDto.setEndDate(project.getEndDate());
-				
-
-				listProjectDto.add(projectDto);
+		public static Project projectDtoToProject(ProjectDto projectDto) {
+			Project project = new Project();
+			if (projectDto != null) {
+				project.setId(projectDto.getId());
+				project.setName(projectDto.getName());
+				project.setStatus(projectDto.getStatus());
+				project.setType(projectDto.getType());
+				project.setStartDate(projectDto.getStartDate());
+				project.setEndDate(projectDto.getEndDate());
+				return project;
 			}
-			return listProjectDto;
+			return null;
 		}
-		return null;
 
-	}
+		// Project to ProjectDto list converter
 
+		public static List<ProjectDto> projectToProjectDto(List<Project> projectList) {
+			List<ProjectDto> listProjectDto = new ArrayList<>();
+			if (projectList != null) {
+				for (Project project : projectList) {
+					ProjectDto projectDto = new ProjectDto();
+					projectDto.setId(project.getId());
+					projectDto.setName(project.getName());
+					projectDto.setStatus(project.getStatus());
+					projectDto.setType(project.getType());
+					projectDto.setStartDate(project.getStartDate());
+					projectDto.setEndDate(project.getEndDate());
+					
+
+					listProjectDto.add(projectDto);
+				}
+				return listProjectDto;
+			}
+			return null;
+
+		}
 }
