@@ -13,15 +13,16 @@ import com.spring.boot.dto.ProjectDto;
 import com.spring.boot.services.ProjectService;
 
 @RestController
-@RequestMapping(value ="api/v1")
+@RequestMapping(value = "api/v1")
 public class ProjectController {
 
 	@Autowired
 	private ProjectService projectService;
-	
+
 	@PostMapping(value = "/project")
-	public ResponseEntity<Object> addEmployee(@RequestBody ProjectDto projectDto) {
+	public ResponseEntity<Object> addProject(@RequestBody ProjectDto projectDto) {
 		projectService.addProject(ProjectConverter.projectDtoToProject(projectDto));
 		return new ResponseEntity<Object>("Added Successfully", HttpStatus.CREATED);
 	}
 }
+   

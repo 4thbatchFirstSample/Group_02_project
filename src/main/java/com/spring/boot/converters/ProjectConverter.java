@@ -32,7 +32,6 @@ public class ProjectConverter {
 				projectDto.setId(project.getId());
 				projectDto.setName(project.getName());
 				projectDto.setAbbreviation(project.getAbbreviation());
-
 				listProjectDto.add(projectDto);
 			}
 			return listProjectDto;
