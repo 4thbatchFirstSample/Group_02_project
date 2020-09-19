@@ -30,7 +30,7 @@ public class DefectConverter {
 	
 	// Project to ProjectDto list converter
 
-			public static List<DefectDto> projectToProjectDto(List<Defect> defectList) {
+			public static List<DefectDto> defectToDefectDto(List<Defect> defectList) {
 				List<DefectDto> listDefecttDto = new ArrayList<>();
 				if (defectList != null) {
 					for (Defect defect : defectList) {
