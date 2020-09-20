@@ -8,35 +8,31 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Project {
+public class Submodule {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	private Long subModuleId ;
 	private String name;
-	private String abbreviation;
-
+	
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
+	public Long getSubModuleId() {
+		return subModuleId;
+	}
+	public void setSubModuleId(Long subModuleId) {
+		this.subModuleId = subModuleId;
+	}
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	public String getAbbreviation() {
-		return abbreviation;
-	}
-
-	public void setAbbreviation(String abbreviation) {
-		this.abbreviation = abbreviation;
-	}
 
 }

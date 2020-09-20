@@ -1,11 +1,12 @@
 package com.spring.boot.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+
 import org.springframework.stereotype.Repository;
 
-import com.spring.boot.entities.Project;
+import com.spring.boot.entities.Submodule;
 
 @Repository
-public interface ProjectRepository extends JpaRepository<Project, Long> {
+public interface SubmoduleRepositories extends JpaRepository<Submodule, Long> {
 
 }
