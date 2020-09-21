@@ -5,12 +5,14 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import com.spring.boot.dto.DefectDto;
 import com.spring.boot.entities.Defect;
+import com.spring.boot.entities.Project;
 
 @Service
 public class DefectConverter {
 	//DefectDto to Defect converter
 	public static Defect DefectDtoToDefect(DefectDto DefectDto) {
 		Defect defect = new Defect();
+		Project project = new Project();
 		if (DefectDto != null) {
 			defect.setId(DefectDto.getId());
 			defect.setSubmoduleid(DefectDto.getSubmoduleid());
@@ -23,6 +25,7 @@ public class DefectConverter {
 			defect.setEnteredby(DefectDto.getEnteredby());
 			defect.setSeverity(DefectDto.getSeverity());
 			defect.setPriority(DefectDto.getPriority());
+			
 			return defect;
 		}
 		return null;

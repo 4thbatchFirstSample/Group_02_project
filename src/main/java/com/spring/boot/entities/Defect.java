@@ -11,6 +11,7 @@ import javax.persistence.Table;
 public class Defect {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	
 	private long id;
 	private int submoduleid;
 	private String name;
@@ -22,6 +23,26 @@ public class Defect {
 	private String enteredby;
 	private String severity;
 	private String priority;
+	
+	public Defect() {
+		
+	}
+	
+	public Defect(int submoduleid, String name, String status, String type, String action, String assignto,
+			String description, String enteredby, String severity, String priority) {
+		super();
+		this.submoduleid = submoduleid;
+		this.name = name;
+		this.status = status;
+		this.type = type;
+		this.action = action;
+		this.assignto = assignto;
+		this.description = description;
+		this.enteredby = enteredby;
+		this.severity = severity;
+		this.priority = priority;
+	}
+	
 	public long getId() {
 		return id;
 	}
