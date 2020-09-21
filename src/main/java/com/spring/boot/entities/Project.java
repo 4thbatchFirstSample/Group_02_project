@@ -16,7 +16,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Project {
+public class Submodule {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	
@@ -58,8 +58,14 @@ public class Project {
 	public long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
+	}
+	public Long getSubModuleId() {
+		return subModuleId;
+	}
+	public void setSubModuleId(Long subModuleId) {
+		this.subModuleId = subModuleId;
 	}
 	public String getName() {
 		return name;
@@ -67,30 +73,6 @@ public class Project {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
-	public Date getStartDate() {
-		return startDate;
-	}
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-	public Date getEndDate() {
-		return endDate;
-	}
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
-	
+
+
 }
