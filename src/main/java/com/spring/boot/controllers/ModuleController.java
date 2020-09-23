@@ -1,7 +1,5 @@
 package com.spring.boot.controllers;
 
-
-
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,47 +26,37 @@ public class ModuleController {
 	@Autowired
 	private ModuleService moduleService;
 
-	@PostMapping(value = "/project")
+	@PostMapping(value = "/module")
 	public ResponseEntity<Object> addmodule(@RequestBody ModuleDto moduleDto) {
 		moduleService.addModule(ModuleConverter.moduleDtoToModule(moduleDto));
 		return new ResponseEntity<Object>("Added Successfully", HttpStatus.CREATED);
 	}
 
-	@GetMapping(value = "/project")
+	@GetMapping(value = "/module")
 	public ResponseEntity<Object> getModule() {
 		return new ResponseEntity<Object>(ModuleConverter.moduleToModuleDto(moduleService.getAll()), HttpStatus.OK);
 	}
 
-	@DeleteMapping(value = "/project/{id}")
+	@DeleteMapping(value = "/module/{id}")
 	public ResponseEntity<Object> deleteModule(@PathVariable Long id) {
 		moduleService.deleteModule(id);
 		return new ResponseEntity<Object>("Deleted", HttpStatus.OK);
 	}
 
-	// @GetMapping(value = "/project/{id}")
-	// public ResponseEntity<Object>findModuleById(@PathVariable Long id){
-	// moduleService.getModuleFromId(id);
-	// return new
-	// ResponseEntity<Object>(ModuleConverter.moduleToModuleDto(ModuleService.getAll()),
-	// HttpStatus.OK);
-	// }
-
-	@GetMapping(value = "/project/{id}")
+	@GetMapping(value = "/module/{id}")
 	public Module getModuleFromId(@PathVariable Long id) {
-		Optional<Module> module = moduleService.getModuleFromId(id); 
+		Optional<Module> module = moduleService.getModuleFromId(id);
 		if (module.isPresent()) {
 			return module.get();
 		} else {
 			throw new RuntimeException("Not found this id !");
 		}
 	}
-	
-	@PutMapping(value = "/project")
+
+	@PutMapping(value = "/module")
 	public ResponseEntity<Object> moduleUpdate(@RequestBody ModuleDto moduleDto) {
 		moduleService.moduleUpdate(ModuleConverter.moduleDtoToModule(moduleDto));
 		return new ResponseEntity<Object>("Update Successfully", HttpStatus.OK);
 	}
-	
-	
 
 }

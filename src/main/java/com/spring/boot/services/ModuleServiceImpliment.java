@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import com.spring.boot.entities.Module;
 import com.spring.boot.repositories.ModuleRepository;
 
-
 @Service
 public class ModuleServiceImpliment implements ModuleService {
 	@Autowired
@@ -38,7 +37,5 @@ public class ModuleServiceImpliment implements ModuleService {
 		moduleRepository.save(module);
 		
 	}
-
-
 
 }
