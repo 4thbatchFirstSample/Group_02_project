@@ -11,22 +11,9 @@ public class SubmoduleConverter {
 	public static SubModule submoduleDtoToSubmodule(submoduleDto submoduleDto) {
 		SubModule Submodule = new SubModule();
 		if (submoduleDto != null) {
-<<<<<<< HEAD
-<<<<<<< HEAD
 			Submodule.setId(submoduleDto.getId());
 			Submodule.setName(submoduleDto.getName());
 			return Submodule;
-=======
-			submodule.setId(submoduleDto.getId());
-			submodule.setName(submoduleDto.getName());
-
-			return submodule;
->>>>>>> afd78d55245011b565f80374c4bb325f3638b79a
-=======
-			Submodule.setId(submoduleDto.getId());
-			Submodule.setName(submoduleDto.getName());
-			return Submodule;
->>>>>>> f26bc02a136b33e3569c2ef1fa51a388d0b99cc1
 		}
 		return null;
 	}
