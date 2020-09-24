@@ -45,7 +45,10 @@ public class ProjectDto {
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
+<<<<<<< HEAD
 	
 	
 	
+=======
+>>>>>>> afd78d55245011b565f80374c4bb325f3638b79a
 }

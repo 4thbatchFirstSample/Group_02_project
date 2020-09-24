@@ -9,11 +9,18 @@ import com.spring.boot.entities.Submodule;
 @Service
 public class SubmoduleConverter {
 	public static Submodule submoduleDtoToSubmodule(submoduleDto submoduleDto) {
-		Submodule Submodule = new Submodule();
+		Submodule submodule = new Submodule();
 		if (submoduleDto != null) {
+<<<<<<< HEAD
 			Submodule.setId(submoduleDto.getId());
 			Submodule.setName(submoduleDto.getName());
 			return Submodule;
+=======
+			submodule.setId(submoduleDto.getId());
+			submodule.setName(submoduleDto.getName());
+
+			return submodule;
+>>>>>>> afd78d55245011b565f80374c4bb325f3638b79a
 		}
 		return null;
 	}
