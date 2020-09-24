@@ -13,7 +13,6 @@ public class SubmoduleConverter {
 		if (submoduleDto != null) {
 			Submodule.setId(submoduleDto.getId());
 			Submodule.setName(submoduleDto.getName());
-			Submodule.setSubModuleId(submoduleDto.getSubModuleId());
 			return Submodule;
 		}
 		return null;
@@ -26,7 +25,6 @@ public class SubmoduleConverter {
 				submoduleDto submoduleDto = new submoduleDto();
 				submoduleDto.setId(Submodule.getId());
 				submoduleDto.setName(Submodule.getName());
-				submoduleDto.setSubModuleId(Submodule.getSubModuleId());
 				
 				listsubmoduleDto.add(submoduleDto);
 			}
