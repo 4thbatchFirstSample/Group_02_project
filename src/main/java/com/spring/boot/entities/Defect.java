@@ -1,9 +1,10 @@
 package com.spring.boot.entities;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -11,8 +12,8 @@ import javax.persistence.Table;
 public class Defect {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	
 	private long id;
-	private int submoduleid;
 	private String name;
 	private String status;
 	private String type;
@@ -22,17 +23,24 @@ public class Defect {
 	private String enteredby;
 	private String severity;
 	private String priority;
+	
+	@ManyToOne
+	@JoinColumn(name="subModuleId")
+	private SubModule subModule;
+	
+	
+	
+	public SubModule getSubModule() {
+		return subModule;
+	}
+	public void setSubModule(SubModule subModule) {
+		this.subModule = subModule;
+	}
 	public long getId() {
 		return id;
 	}
 	public void setId(long id) {
 		this.id = id;
-	}
-	public int getSubmoduleid() {
-		return submoduleid;
-	}
-	public void setSubmoduleid(int submoduleid) {
-		this.submoduleid = submoduleid;
 	}
 	public String getName() {
 		return name;
@@ -87,7 +95,5 @@ public class Defect {
 	}
 	public void setPriority(String priority) {
 		this.priority = priority;
-	}
-	
-	
+	}		
 }

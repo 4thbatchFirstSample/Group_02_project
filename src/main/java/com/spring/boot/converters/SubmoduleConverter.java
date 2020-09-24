@@ -4,25 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
 import com.spring.boot.dto.submoduleDto;
-import com.spring.boot.entities.Submodule;
+import com.spring.boot.entities.SubModule;
 
 @Service
 public class SubmoduleConverter {
-	public static Submodule submoduleDtoToSubmodule(submoduleDto submoduleDto) {
-		Submodule submodule = new Submodule();
+	public static SubModule submoduleDtoToSubmodule(submoduleDto submoduleDto) {
+		SubModule Submodule = new SubModule();
 		if (submoduleDto != null) {
-			submodule.setId(submoduleDto.getId());
-			submodule.setName(submoduleDto.getName());
-
-			return submodule;
+			Submodule.setId(submoduleDto.getId());
+			Submodule.setName(submoduleDto.getName());
+			return Submodule;
 		}
 		return null;
 	}
 
-	public static List<submoduleDto> submoduleToSubmoduleDto(List<Submodule> submoduleList) {
+	public static List<submoduleDto> submoduleToSubmoduleDto(List<SubModule> submoduleList) {
 		List<submoduleDto> listsubmoduleDto = new ArrayList<>();
 		if (submoduleList != null) {
-			for (Submodule Submodule : submoduleList) {	
+			for (SubModule Submodule : submoduleList) {	
 				submoduleDto submoduleDto = new submoduleDto();
 				submoduleDto.setId(Submodule.getId());
 				submoduleDto.setName(Submodule.getName());

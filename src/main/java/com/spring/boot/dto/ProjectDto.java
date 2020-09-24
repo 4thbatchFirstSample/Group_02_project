@@ -3,6 +3,7 @@ package com.spring.boot.dto;
 import java.sql.Date;
 
 public class ProjectDto {
+	
 	private long id;
 	private String name;
 	private String status;
@@ -45,4 +46,7 @@ public class ProjectDto {
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
+	
+	
+
 }

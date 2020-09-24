@@ -2,7 +2,6 @@
 package com.spring.boot.entities;
 
 import java.sql.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +20,6 @@ public class Project {
 	private String type;
 	private Date startDate;
 	private Date endDate;
-	
 	public long getId() {
 		return id;
 	}
@@ -34,7 +32,6 @@ public class Project {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
 	public String getStatus() {
 		return status;
 	}

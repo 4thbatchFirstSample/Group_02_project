@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.spring.boot.entities.Submodule;
+import com.spring.boot.entities.SubModule;
 import com.spring.boot.repositories.SubmoduleRepositories;
 @Service
 public class SubmoduleServicelmpl implements SubmoduleService {
@@ -13,16 +13,16 @@ public class SubmoduleServicelmpl implements SubmoduleService {
 	 private SubmoduleRepositories  submodulerepositories;
 
 	@Override
-	public void addSubmodule(Submodule submodule) {
+	public void addSubmodule(SubModule submodule) {
 		submodulerepositories.save(submodule);
 	}
 
 	@Override
-	public List<Submodule> getAll() {
+	public List<SubModule> getAll() {
 		return submodulerepositories.findAll();
 	}
 	@Override
-	public void SubmduleUpdate(Submodule submodule) {
+	public void SubmduleUpdate(SubModule submodule) {
 		submodulerepositories.save(submodule);	
 	}
 
@@ -32,7 +32,7 @@ public class SubmoduleServicelmpl implements SubmoduleService {
 	}
 
 	@Override
-	public Optional<Submodule> GetSubmoduleId(Long id) {
+	public Optional<SubModule> GetSubmoduleId(Long id) {
 		return submodulerepositories.findById(id) ;
 	}
 

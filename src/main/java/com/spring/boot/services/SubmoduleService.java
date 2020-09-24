@@ -3,17 +3,17 @@ package com.spring.boot.services;
 import java.util.List;
 import java.util.Optional;
 
-import com.spring.boot.entities.Submodule;
+import com.spring.boot.entities.SubModule;
 
 public interface SubmoduleService {
 	
-	public void addSubmodule(Submodule submodule);
-	public List<Submodule> getAll();
+	public void addSubmodule(SubModule submodule);
+	public List<SubModule> getAll();
 	
 	public void deleteSubmoduleById(Long id);
 		
-	public void SubmduleUpdate(Submodule submodule);
+	public void SubmduleUpdate(SubModule submodule);
 	
-	public Optional<Submodule> GetSubmoduleId(Long id);
+	public Optional<SubModule> GetSubmoduleId(Long id);
 
 }

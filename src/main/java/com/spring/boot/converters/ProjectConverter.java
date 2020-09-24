@@ -27,7 +27,7 @@ public class ProjectConverter {
 
 		// Project to ProjectDto list converter
 
-		public static List<ProjectDto> projectToProjectDto(List<Project> projectList) {
+		public static List<ProjectDto> projectToProjectDtoList(List<Project> projectList) {
 			List<ProjectDto> listProjectDto = new ArrayList<>();
 			if (projectList != null) {
 				for (Project project : projectList) {
@@ -47,4 +47,25 @@ public class ProjectConverter {
 			return null;
 
 		}
+		
+		// Project to ProjectDto converter
+
+//				public static ProjectDto projectToProjectDto(Optional<Project> projectList) {
+//					if (projectList != null) {
+//						for (Project project : projectList) {
+//							ProjectDto projectDto = new ProjectDto();
+//							projectDto.setId(project.getId());
+//							projectDto.setName(project.getName());
+//							projectDto.setStatus(project.getStatus());
+//							projectDto.setType(project.getType());
+//							projectDto.setStartDate(project.getStartDate());
+//							projectDto.setEndDate(project.getEndDate());
+//							
+//							return projectDto;
+//						}
+//						return null;
+//					}
+//					return null;
+//
+//				}
 }
