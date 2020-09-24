@@ -1,5 +1,7 @@
 package com.spring.boot.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,13 +12,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.spring.boot.services.DefectService;
 import com.spring.boot.converters.DefectConverter;
 import com.spring.boot.dto.DefectDto;
-import com.spring.boot.services.DefectService;
 
 @RestController
 @RequestMapping(value = "api/v1")
-public class DefectControler {
+public class DefectController {
 	@Autowired
 	private DefectService DefectService;
 	
@@ -37,5 +39,16 @@ public class DefectControler {
 		return new ResponseEntity<Object>("Successfully Deleted",HttpStatus.OK);
 	}
 	
-
+	@GetMapping(value = "/Defect/SubModule-id/{SubModuleId}")
+	public List<DefectDto> getAllDefectBySubModuleId(@PathVariable Long SubModuleId){
+		return DefectConverter.defectToDefectDto(DefectService.getAllDefectsBySubmoduleId(SubModuleId));
+		
+	}
+	
+	@GetMapping(value = "/Defect/{id}")
+	public ResponseEntity<Object> getAllById(@PathVariable Long id){
+		return null ;
+		
+	}
+	
 }

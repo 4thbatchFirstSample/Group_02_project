@@ -30,7 +30,7 @@ public class ProjectController {
 
 	@GetMapping(value = "/project")
 	public ResponseEntity<Object> getProject() {
-		return new ResponseEntity<Object>(ProjectConverter.projectToProjectDto(projectService.getAll()), HttpStatus.OK);
+		return new ResponseEntity<Object>(ProjectConverter.projectToProjectDtoList(projectService.getAll()), HttpStatus.OK);
 	}
 
 	@DeleteMapping(value = "/project/{id}")
@@ -41,7 +41,7 @@ public class ProjectController {
 	
 	@GetMapping(value = "/project/{id}")
 	public ResponseEntity<Object>findProjectById(@PathVariable Long id){
-		return  new ResponseEntity<Object>(projectService.getProjectFromId(id), HttpStatus.OK);
+		return  new ResponseEntity<Object>(projectService.getProjectFromId(id),HttpStatus.OK);
 	}
 	
 	@PutMapping(value = "/project")
