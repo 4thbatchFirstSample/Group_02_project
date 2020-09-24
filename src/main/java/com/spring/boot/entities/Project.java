@@ -13,7 +13,6 @@ import javax.persistence.Table;
 public class Project {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	
 	private long id;
 	private String name;
 	private String status;
