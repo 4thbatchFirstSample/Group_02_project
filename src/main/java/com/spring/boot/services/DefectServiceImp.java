@@ -28,4 +28,9 @@ public class DefectServiceImp implements DefectService {
 		DefectRepository.deleteById(id);
 	}
 
+	@Override
+	public List<Defect> getAllDefectsBySubmoduleId(Long SubModuleId) {
+		return DefectRepository.findBySubModuleId(SubModuleId);
+	}
+
 }

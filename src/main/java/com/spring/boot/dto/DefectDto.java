@@ -1,8 +1,6 @@
 package com.spring.boot.dto;
-
 public class DefectDto {
 	private long id;
-	private int submoduleid;
 	private String name;
 	private String status;
 	private String type;
@@ -12,17 +10,19 @@ public class DefectDto {
 	private String enteredby;
 	private String severity;
 	private String priority;
+	private Long SubModuleId;
+	
+	public Long getSubModuleId() {
+		return SubModuleId;
+	}
+	public void setSubModuleId(Long subModuleId) {
+		SubModuleId = subModuleId;
+	}
 	public long getId() {
 		return id;
 	}
 	public void setId(long id) {
 		this.id = id;
-	}
-	public int getSubmoduleid() {
-		return submoduleid;
-	}
-	public void setSubmoduleid(int submoduleid) {
-		this.submoduleid = submoduleid;
 	}
 	public String getName() {
 		return name;

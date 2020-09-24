@@ -1,9 +1,10 @@
 package com.spring.boot.entities;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -13,7 +14,6 @@ public class Defect {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	
 	private long id;
-	private int submoduleid;
 	private String name;
 	private String status;
 	private String type;
@@ -24,36 +24,23 @@ public class Defect {
 	private String severity;
 	private String priority;
 	
-	public Defect() {
-		
-	}
+	@ManyToOne
+	@JoinColumn(name="subModuleId")
+	private SubModule subModule;
 	
-	public Defect(int submoduleid, String name, String status, String type, String action, String assignto,
-			String description, String enteredby, String severity, String priority) {
-		super();
-		this.submoduleid = submoduleid;
-		this.name = name;
-		this.status = status;
-		this.type = type;
-		this.action = action;
-		this.assignto = assignto;
-		this.description = description;
-		this.enteredby = enteredby;
-		this.severity = severity;
-		this.priority = priority;
-	}
 	
+	
+	public SubModule getSubModule() {
+		return subModule;
+	}
+	public void setSubModule(SubModule subModule) {
+		this.subModule = subModule;
+	}
 	public long getId() {
 		return id;
 	}
 	public void setId(long id) {
 		this.id = id;
-	}
-	public int getSubmoduleid() {
-		return submoduleid;
-	}
-	public void setSubmoduleid(int submoduleid) {
-		this.submoduleid = submoduleid;
 	}
 	public String getName() {
 		return name;
@@ -108,7 +95,5 @@ public class Defect {
 	}
 	public void setPriority(String priority) {
 		this.priority = priority;
-	}
-	
-	
+	}		
 }

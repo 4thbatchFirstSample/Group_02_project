@@ -5,17 +5,16 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import com.spring.boot.dto.DefectDto;
 import com.spring.boot.entities.Defect;
-import com.spring.boot.entities.Project;
+import com.spring.boot.entities.SubModule;
 
 @Service
 public class DefectConverter {
 	//DefectDto to Defect converter
 	public static Defect DefectDtoToDefect(DefectDto DefectDto) {
 		Defect defect = new Defect();
-		Project project = new Project();
+		SubModule Submodule = new SubModule();
 		if (DefectDto != null) {
 			defect.setId(DefectDto.getId());
-			defect.setSubmoduleid(DefectDto.getSubmoduleid());
 			defect.setName(DefectDto.getName());
 			defect.setStatus(DefectDto.getStatus());
 			defect.setType(DefectDto.getType());
@@ -25,13 +24,15 @@ public class DefectConverter {
 			defect.setEnteredby(DefectDto.getEnteredby());
 			defect.setSeverity(DefectDto.getSeverity());
 			defect.setPriority(DefectDto.getPriority());
+			Submodule.setId(DefectDto.getSubModuleId());
+			defect.setSubModule(Submodule);
 			
 			return defect;
 		}
 		return null;
 	}
 	
-	// Project to ProjectDto list converter
+	// Defect to DefectDto list converter
 
 			public static List<DefectDto> defectToDefectDto(List<Defect> defectList) {
 				List<DefectDto> listDefecttDto = new ArrayList<>();
@@ -39,7 +40,6 @@ public class DefectConverter {
 					for (Defect defect : defectList) {
 						DefectDto defectDto = new DefectDto();
 						defectDto.setId(defect.getId());
-						defectDto.setSubmoduleid(defect.getSubmoduleid());
 						defectDto.setName(defect.getName());
 						defectDto.setStatus(defect.getStatus());
 						defectDto.setType(defect.getType());
@@ -49,8 +49,7 @@ public class DefectConverter {
 						defectDto.setEnteredby(defect.getEnteredby());
 						defectDto.setSeverity(defect.getSeverity());
 						defectDto.setPriority(defect.getPriority());
-						
-
+						defectDto.setSubModuleId(defect.getSubModule().getId());
 						listDefecttDto.add(defectDto);
 					}
 					return listDefecttDto;

@@ -7,4 +7,5 @@ public interface DefectService {
 	public void addDefect (Defect Defect);
 	public List<Defect> getDefect();
 	public void deteleDefectById(Long id);
+	public List<Defect> getAllDefectsBySubmoduleId(Long SubModuleId);
 }
