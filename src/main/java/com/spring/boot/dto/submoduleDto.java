@@ -3,6 +3,7 @@ package com.spring.boot.dto;
 public class submoduleDto {
 	private long id;
 	private String name;
+	private Long moduleId;
 	public long getId() {
 		return id;
 	}
@@ -15,5 +16,10 @@ public class submoduleDto {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	public Long getModuleId() {
+		return moduleId;
+	}
+	public void setModuleId(Long moduleId) {
+		this.moduleId = moduleId;
+	}
 }

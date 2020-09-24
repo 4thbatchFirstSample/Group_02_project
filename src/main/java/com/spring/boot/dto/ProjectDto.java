@@ -9,6 +9,7 @@ public class ProjectDto {
 	private String status;
 	private String type;
 	private Date startDate;
+	private Date endDate;
 	public long getId() {
 		return id;
 	}
@@ -45,7 +46,7 @@ public class ProjectDto {
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
-	private Date endDate;
+	
 	
 
 }
