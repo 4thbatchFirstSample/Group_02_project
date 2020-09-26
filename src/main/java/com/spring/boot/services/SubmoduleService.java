@@ -15,6 +15,7 @@ public interface SubmoduleService {
 	public void SubmduleUpdate(SubModule submodule);
 	
 	public Optional<SubModule> GetSubmoduleId(Long id);
-
+	
+	public List<SubModule>GetSubmoduleFromModuleId(Long id);
 
 }

@@ -52,6 +52,11 @@ public class SubmoduleController {
 		return new ResponseEntity<Object>(submoduleservice.GetSubmoduleId(id),HttpStatus.OK);
 	}
 	
+	@GetMapping(value = "/submodule/module_id/{id}")
+	public ResponseEntity<Object>getsubmodulefrommoduleid(@PathVariable Long id){
+		return new ResponseEntity<Object>(SubmoduleConverter.submoduleToSubmoduleDto(submoduleservice.GetSubmoduleFromModuleId(id)),HttpStatus.OK);
+	}
+	
 	
 
 	}

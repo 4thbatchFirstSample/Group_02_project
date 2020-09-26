@@ -36,6 +36,11 @@ public class SubmoduleServicelmpl implements SubmoduleService {
 		return submodulerepositories.findById(id) ;
 	}
 
+	@Override
+	public List<SubModule> GetSubmoduleFromModuleId(Long id) {
+		return submodulerepositories.findByModuleId(id);
+	}
+
 
 	
 }
