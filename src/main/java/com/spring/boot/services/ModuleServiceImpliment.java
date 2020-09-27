@@ -14,8 +14,8 @@ public class ModuleServiceImpliment implements ModuleService {
 
 	@Override
 	public void addModule(Module module) {
-			moduleRepository.save(module);
-		}
+		moduleRepository.save(module);
+	}
 
 	@Override
 	public List<Module> getAll() {
@@ -24,7 +24,7 @@ public class ModuleServiceImpliment implements ModuleService {
 
 	@Override
 	public void deleteModule(Long id) {
-		moduleRepository.deleteById(id);	
+		moduleRepository.deleteById(id);
 	}
 
 	@Override
@@ -35,7 +35,12 @@ public class ModuleServiceImpliment implements ModuleService {
 	@Override
 	public void moduleUpdate(Module module) {
 		moduleRepository.save(module);
-		
+
+	}
+
+	@Override
+	public List<Module> getAllModuleByProjectId(Long projectId) {
+		return moduleRepository.findByProjectId(projectId);
 	}
 
 }

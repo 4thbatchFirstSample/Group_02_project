@@ -7,6 +7,7 @@ package com.spring.boot.converters;
 
 	import com.spring.boot.dto.ModuleDto;
 	import com.spring.boot.entities.Module;
+import com.spring.boot.entities.Project;
 
 	@Service
 	public class ModuleConverter {
@@ -14,10 +15,12 @@ package com.spring.boot.converters;
 		
 		public static Module moduleDtoToModule(ModuleDto moduleDto) {
 			Module Module = new Module();
+			Project Project = new Project();
 			if (moduleDto != null) {
 				Module.setId(moduleDto.getId());
 				Module.setName(moduleDto.getName());
-				Module.setProjectId(moduleDto.getProjectId());
+				Project.setId(moduleDto.getProjectId());
+				Module.setProject(Project);
 				return Module;
 			}
 			return null;
@@ -32,8 +35,7 @@ package com.spring.boot.converters;
 					ModuleDto moduleDto = new ModuleDto();
 					moduleDto.setId(module.getId());
 					moduleDto.setName(module.getName());
-					moduleDto.setProjectId(module.getProjectId());
-
+					moduleDto.setProjectId(module.getProject().getId());				
 					listModuleDto.add(moduleDto);
 				}
 				return listModuleDto;

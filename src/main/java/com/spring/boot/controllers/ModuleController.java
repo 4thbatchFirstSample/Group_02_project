@@ -58,5 +58,10 @@ public class ModuleController {
 		moduleService.moduleUpdate(ModuleConverter.moduleDtoToModule(moduleDto));
 		return new ResponseEntity<Object>("Update Successfully", HttpStatus.OK);
 	}
+	
+	@GetMapping(value="/projectm/{id}")
+	public ResponseEntity<Object> getAllByprojectId(@PathVariable Long id){
+		return new ResponseEntity<Object>(ModuleConverter.moduleToModuleDto(moduleService.getAllModuleByProjectId(id)), HttpStatus.OK);
+	}
 
 }

@@ -33,4 +33,9 @@ public class DefectServiceImp implements DefectService {
 		return DefectRepository.findBySubModuleId(SubModuleId);
 	}
 
+	@Override
+	public void updateDefect(Defect Defect) {
+		DefectRepository.save(Defect);
+	}
+
 }
